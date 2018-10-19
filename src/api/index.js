@@ -37,3 +37,21 @@ export const fetchSinglePollQuestion = (id) => {
   });
 }
 
+export const getChannelsList = () => fetch(`${API_BASE_URL}/channels-list`);
+
+export const submitPollQuestion = () => {
+  console.log("hello");
+  fetch(`${API_BASE_URL}/submit-poll-question`, {
+    method: "post",
+    body: JSON.stringify({
+      payload: {
+        channel: "slackbot-testing",
+        question: "How you doing?"
+      }
+    })
+  })
+   .then(res => res.json())
+   .then(response => {
+      console.log(response.message);
+    });
+}

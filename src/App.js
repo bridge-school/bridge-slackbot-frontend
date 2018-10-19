@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { pollGroup, submitPollQuestion } from "./api";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
 import Header from "./components/Header";
@@ -20,6 +22,11 @@ const theme = {
 };
 
 class App extends Component {
+  // uncomment this to test that you are connected to the backend!
+  componentDidMount() {
+    pollGroup();
+    submitPollQuestion();
+  }
   render() {
     return (
       <ThemeProvider theme={theme}>
