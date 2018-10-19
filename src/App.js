@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import logo from "./logo.svg";
 import "./App.css";
 
-import { pollGroup } from "./api";
+// import { pollGroup } from "./api";
 
 class App extends Component {
   // uncomment this to test that you are connected to the backend!
-  componentDidMount() {
-    pollGroup();
-  }
+  // componentDidMount() {
+  //   pollGroup();
+  // }
   render() {
     return (
       <div className="App">
