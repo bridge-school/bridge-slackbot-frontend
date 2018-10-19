@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -6,9 +7,9 @@ import { pollGroup } from "./api";
 
 class App extends Component {
   // uncomment this to test that you are connected to the backend!
-  // componentDidMount() {
-  //   pollGroup();
-  // }
+  componentDidMount() {
+    pollGroup();
+  }
   render() {
     return (
       <div className="App">
@@ -24,4 +25,13 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return state;
+};
+const mapDispatchToProps = {
+
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+) (App);
