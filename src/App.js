@@ -8,18 +8,18 @@ import Header from "./components/Header";
 import NewPoll from "./components/NewPoll";
 
 const theme = {
-  black: "#525252",
-  borderRadius: "3px",
-  bridgeBlue: "#000c9e",
-  bridgeGreen: "#08c39d",
-  bridgeLogoBlue: "#4e57ca",
-  bridgeLogoPink: "#eb2c97",
-  bridgeLogoTurquoise: "#2fa1d4",
-  bridgePink: "#eb2ca8",
-  bridgeTurquoise: "#65b8de",
-  darkGrey: "#b1b1b1",
-  lightGrey: "#e1e1e1",
-  offWhite: "#f8f8f8"
+    black: "#525252",
+    borderRadius: "3px",
+    bridgeBlue: "#000c9e",
+    bridgeGreen: "#08c39d",
+    bridgeLogoBlue: "#4e57ca",
+    bridgeLogoPink: "#eb2c97",
+    bridgeLogoTurquoise: "#2fa1d4",
+    bridgePink: "#eb2ca8",
+    bridgeTurquoise: "#65b8de",
+    darkGrey: "#b1b1b1",
+    lightGrey: "#e1e1e1",
+    offWhite: "#f8f8f8",
 };
 
 class App extends Component {
