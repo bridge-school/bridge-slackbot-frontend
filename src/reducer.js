@@ -7,6 +7,7 @@ export const INITIAL_STATE = {
 }
 
 export const reducer = (state = INITIAL_STATE, action) => {
+  if (!action) return state;
   switch (action.type) {
     case BRIDGEBOT_ACTIONS.SAVE_POLL_GROUPS: {
       return {
