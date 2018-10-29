@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import styled from "styled-components";
-import Button from "./Button";
+import Button from "../Button";
+import {
+    handleChangePollQuestion,
+} from "./NewPoll.actions";
 
 const StyledPoll = styled.div`
     color: ${props => props.theme.black};
@@ -44,7 +48,8 @@ const StyledSelect = styled.select`
 `;
 
 class NewPoll extends Component {
-    render() {
+  render() {
+    const { pollQuestion, handleChangePollQuestion } = this.props;
         return (
             <StyledPoll>
                 <div className="content-wrapper">
@@ -52,7 +57,7 @@ class NewPoll extends Component {
                     <form>
                         <div>
                             <StyledLabel htmlFor="pollQuestion">Question:</StyledLabel>
-                            <StyledInput type="text" value="" name="pollQuestion" id="pollQuestion" />
+                            <StyledInput type="text" value={pollQuestion} onChange={handleChangePollQuestion} name="pollQuestion" id="pollQuestion" />
                         </div>
                         <div>
                             <StyledLabel htmlFor="pollUserGroup">User Group:</StyledLabel>
@@ -72,4 +77,15 @@ class NewPoll extends Component {
     }
 }
 
-export default NewPoll;
+const mapStateToProps = (state) => ({
+  pollQuestion: state.pollQuestion,
+});
+
+const mapDispatchToProps = {
+  handleChangePollQuestion,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(NewPoll);
