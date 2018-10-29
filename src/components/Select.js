@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { sortNameAlpha } from "../helpers";
 
 const StyledSelect = styled.select`
   -webkit-appearance: none;
@@ -24,9 +25,9 @@ const StyledSelect = styled.select`
 const Select = ({ handleChange, name, values }) => (
   <StyledSelect name={name} id={name} onChange={handleChange}>
     <option value="">Select a group</option>
-    {values.length ? values.map(value => (
+    {values.sort(sortNameAlpha).map(value => (
         <option value={value.id} key={value.id}>{value.name}</option>
-    )) : ""}
+    ))}
   </StyledSelect>
 );
 
