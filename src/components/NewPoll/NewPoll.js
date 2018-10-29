@@ -6,44 +6,64 @@ import Input from "../Input";
 import Label from "../Label";
 import Select from "../Select";
 import {
-    handleChangePollQuestion,
+  fetchPollGroups,
+  handleChangePollGroup,
+  handleChangePollQuestion,
 } from "./NewPoll.actions";
 
 const StyledPoll = styled.div`
-    color: ${props => props.theme.black};
+  color: ${props => props.theme.black};
 `;
 
 class NewPoll extends Component {
+  componentDidMount() {
+    this.props.fetchPollGroups();
+  }
+
   render() {
-    const { pollQuestion, handleChangePollQuestion } = this.props;
-        return (
-            <StyledPoll>
-                <div className="content-wrapper">
-                    <h2>Create New Poll</h2>
-                    <form>
-                        <div>
-                            <Label forValue="pollQuestion" text="Question" />
-                            <Input type="text" value={pollQuestion} handleChange={handleChangePollQuestion} name="pollQuestion" />
-                        </div>
-                        <div>
-                            <Label forValue="pollUserGroup" text="User Group" />
-                            <Select name="pollGroups" />
-                        </div>
-                        <div>
-                            <Button label="Submit Poll" />
-                        </div>
-                    </form>
-                </div>
-            </StyledPoll>
-        );
-    }
+    const { pollGroups, pollQuestion, handleChangePollGroup, handleChangePollQuestion } = this.props;
+    return (
+      <StyledPoll>
+        <div className="content-wrapper">
+          <h2>Create New Poll</h2>
+          <form>
+            <div>
+              <Label 
+                forValue="pollQuestion" 
+                text="Question" />
+              <Input 
+                type="text" 
+                value={pollQuestion} 
+                handleChange={handleChangePollQuestion} 
+                name="pollQuestion" />
+            </div>
+            <div>
+              <Label 
+                forValue="pollUserGroup" 
+                text="User Group" />
+              <Select 
+                name="pollGroups" 
+                values={pollGroups} 
+                handleChange={handleChangePollGroup} />
+            </div>
+            <div>
+              <Button label="Submit Poll" />
+            </div>
+          </form>
+        </div>
+      </StyledPoll>
+    );
+  }
 }
 
 const mapStateToProps = (state) => ({
+  pollGroups: state.pollGroups,
   pollQuestion: state.pollQuestion,
 });
 
 const mapDispatchToProps = {
+  fetchPollGroups,
+  handleChangePollGroup,
   handleChangePollQuestion,
 };
 
