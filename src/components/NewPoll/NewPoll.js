@@ -23,6 +23,7 @@ class NewPoll extends Component {
 
   render() {
     const { pollGroups, pollQuestion, handleChangePollGroup, handleChangePollQuestion, handleFormSubmit } = this.props;
+    
     return (
       <StyledPoll>
         <div className="content-wrapper">
