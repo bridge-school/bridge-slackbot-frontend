@@ -9,12 +9,9 @@ const savePollGroups = pollGroups => ({
 const shapePollData = pollGroups =>
   pollGroups.map(pollGroup => ({ id: pollGroup.id, name: pollGroup.name }));
 
-const submitForm = () => {
-  console.log("submitting form!");
-  return {
-    type: BRIDGEBOT_ACTIONS.SUBMIT_FORM,
-  }
-};
+const submitForm = () => ({
+  type: BRIDGEBOT_ACTIONS.SUBMIT_FORM,
+});
 
 export const handleChangePollGroup = e => ({
   type: BRIDGEBOT_ACTIONS.SET_POLL_GROUP,
