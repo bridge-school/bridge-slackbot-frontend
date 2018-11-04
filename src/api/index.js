@@ -13,23 +13,22 @@ export const pollGroup = () =>
     .then(res => res.json())
     .then(response => {
       console.log(response);
-    });
+});
 
 export const getChannelsList = () => fetch(`${API_BASE_URL}/channels-list`);
 
-export const submitPollQuestion = () => {
-  console.log("hello");
-  fetch(`${API_BASE_URL}/submit-poll-question`, {
+export const getUsersInChannel = (usergroup) => fetch(`${API_BASE_URL}/user-list`, {
+  method: "post",
+  body: JSON.stringify({
+    usergroup
+  })
+});
+
+export const submitPollQuestion = (payload) => {
+  return fetch(`${API_BASE_URL}/submit-poll-question`, {
     method: "post",
     body: JSON.stringify({
-      payload: {
-        channel: "slackbot-testing",
-        question: "How you doing?"
-      }
-    })
+      payload
+    }),
   })
-   .then(res => res.json())
-   .then(response => {
-      console.log(response.message);
-    });
 }
