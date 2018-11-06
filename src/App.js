@@ -25,7 +25,6 @@ class App extends Component {
   // uncomment this to test that you are connected to the backend!
   componentDidMount() {
     pollGroup();
-    submitPollQuestion();
   }
   render() {
     return (
