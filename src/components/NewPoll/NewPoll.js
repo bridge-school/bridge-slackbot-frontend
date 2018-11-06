@@ -24,25 +24,27 @@ class NewPoll extends Component {
   render() {
     const { pollGroups, pollQuestion, handleChangePollGroup, handleChangePollQuestion, handleFormSubmit, selectedPollGroup } = this.props;
     
-    return <StyledPoll>
-          <h2>Create New Poll</h2>
-          <form onSubmit={e => {
-              e.preventDefault();
-              handleFormSubmit(pollQuestion, selectedPollGroup);
-            }}>
-            <div>
-              <Label forValue="pollQuestion" text="Question" />
-              <Input type="text" value={pollQuestion} handleChange={handleChangePollQuestion} name="pollQuestion" />
-            </div>
-            <div>
-              <Label forValue="pollUserGroup" text="User Group" />
-              <Select name="pollGroups" values={pollGroups} handleChange={handleChangePollGroup} />
-            </div>
-            <div>
-              <Button label="Submit Poll" />
-            </div>
-          </form>
-      </StyledPoll>;
+    return (
+      <StyledPoll>
+        <h2>Create New Poll</h2>
+        <form onSubmit={e => {
+            e.preventDefault();
+            handleFormSubmit(pollQuestion, selectedPollGroup);
+          }}>
+          <div>
+            <Label forValue="pollQuestion" text="Question" />
+            <Input type="text" value={pollQuestion} handleChange={handleChangePollQuestion} name="pollQuestion" />
+          </div>
+          <div>
+            <Label forValue="pollUserGroup" text="User Group" />
+            <Select name="pollGroups" values={pollGroups} handleChange={handleChangePollGroup} />
+          </div>
+          <div>
+            <Button label="Submit Poll" />
+          </div>
+        </form>
+      </StyledPoll>
+    );
   }
 }
 
