@@ -1,7 +1,7 @@
 import React from "react";
 
 const Poll = (props) => {
-  const pollId = props.match.params.pollId;
+  const {pollId} = props.match.params;
 
   return (
     <div className="poll">
