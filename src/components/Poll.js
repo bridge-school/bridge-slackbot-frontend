@@ -5,7 +5,7 @@ const Poll = (props) => {
 
   return (
     <div className="poll">
-      <h2>Poll results</h2>
+      <h2>Poll results for {pollId}</h2>
     </div>
   )
 }
