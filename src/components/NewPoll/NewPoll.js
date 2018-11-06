@@ -25,7 +25,6 @@ class NewPoll extends Component {
     const { pollGroups, pollQuestion, handleChangePollGroup, handleChangePollQuestion, handleFormSubmit, selectedPollGroup } = this.props;
     
     return <StyledPoll>
-        <div className="content-wrapper">
           <h2>Create New Poll</h2>
           <form onSubmit={e => {
               e.preventDefault();
@@ -43,7 +42,6 @@ class NewPoll extends Component {
               <Button label="Submit Poll" />
             </div>
           </form>
-        </div>
       </StyledPoll>;
   }
 }
