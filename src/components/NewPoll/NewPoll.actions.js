@@ -1,7 +1,9 @@
 import { BRIDGEBOT_ACTIONS } from "../../reducer";
 import {
   getChannelsList,
+  getUsersInChannel,
   submitPollQuestion,
+  fetchPollQuestions
 } from "../../api/index";
 
 const resetForm = () => ({
@@ -48,3 +50,8 @@ export const handleFormSubmit = (pollQuestion, selectedPollGroup) => dispatch =>
     .then(message => dispatch(savePollId(message)))
     .then(dispatch(resetForm()));
 };
+
+export const getPollQuestions = () => (dispatch) => fetchPollQuestions().then(res => dispatch({
+  type: BRIDGEBOT_ACTIONS.GET_POLL_QUESTIONS,
+  payload: res
+}))
