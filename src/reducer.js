@@ -10,20 +10,26 @@ export const BRIDGEBOT_ACTIONS = {
 export const INITIAL_STATE = {
   pollGroups: [],
   pollQuestion: "",
+  polls: [],
   savedPollId: "",
   selectedPollGroup: "",
   selectedPollGroupUsers: [],
-  polls: [],
+  submitFormSuccess: false,
 }
 
 export const reducer = (state = INITIAL_STATE, action) => {
   if (!action) return state;
   switch (action.type) {
+    case BRIDGEBOT_ACTIONS.GET_POLL_QUESTIONS: {
+      return {
+        ...state,
+        polls: action.payload,
+      }
+    }
     case BRIDGEBOT_ACTIONS.RESET_FORM: {
       return {
         ...state,
         pollQuestion: "",
-        savedPollId: "",
         selectedPollGroup: "",
         submitFormSuccess: true,
       }
@@ -58,12 +64,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         pollQuestion: action.payload,
         submitFormSuccess: false,
-      }
-    }
-    case BRIDGEBOT_ACTIONS.GET_POLL_QUESTIONS: {
-      return {
-        ...state,
-        polls: action.payload,
       }
     }
     default:
