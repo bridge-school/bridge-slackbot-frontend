@@ -25,11 +25,6 @@ const savePolls = polls => ({
     payload: polls
 });
 
-const saveUsers = users => ({
-  type: BRIDGEBOT_ACTIONS.SAVE_USERS,
-  payload: users,
-});
-
 const shapePollData = pollGroups =>
   pollGroups.map(pollGroup => ({ id: pollGroup.id, name: pollGroup.name }));  
 
