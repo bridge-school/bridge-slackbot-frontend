@@ -39,10 +39,17 @@ export const handleChangePollQuestion = e => ({
     payload: e.target.value,
 });
 
+<<<<<<< HEAD
 export const handleFormSubmit = (pollQuestion, selectedPollGroup, selectedPollGroupName) => dispatch => {
   const pollId = (Date.now()).toString();
 
   submitPollQuestion({pollQuestion, selectedPollGroup, selectedPollGroupName, pollId})
+=======
+export const handleFormSubmit = (pollQuestion, selectedPollGroup) => dispatch => {
+  const pollId = Date.now();
+
+  submitPollQuestion({pollQuestion, selectedPollGroup, pollId})
+>>>>>>> set poll id in frontend
     .then(res => res.json())
     .then(res => res.message)
     .then(message => dispatch(savePollId(pollId)))
