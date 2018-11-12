@@ -27,9 +27,7 @@ const Select = ({ handleChange, name, values, value }) => (
   <StyledSelect name={name} value={value} id={name} onChange={handleChange}>
     <option value="">Select a group</option>
     {values.sort(sortNameAlpha).map(value => (
-      <option value={value.id} key={value.id}>
-        {value.name}
-      </option>
+        <option value={value.id} key={value.id}>{value.name}</option>
     ))}
   </StyledSelect>
 );
