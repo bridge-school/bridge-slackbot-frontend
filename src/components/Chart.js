@@ -8,7 +8,7 @@ class Chart extends Component {
       this.state = {
           chartData:{
             labels: ['Yes (5)', 'No (3)', 'Maybe (2)'],
-            datasets:[
+            datasets: [
               {
                 label: 'Legend',
                 data: [

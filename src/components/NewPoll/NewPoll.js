@@ -5,14 +5,13 @@ import Button from "../Button";
 import Input from "../Input";
 import Label from "../Label";
 import Select from "../Select";
-import Chart from "../Chart";
+// import Chart from "../Chart";
 import SuccessMessage from "../SuccessMessage";
 import {
   fetchPollGroups,
   handleChangePollGroup,
   handleChangePollQuestion,
   handleFormSubmit,
-  // getPollQuestions,
 } from "./NewPoll.actions";
 
 const StyledPoll = styled.div`
@@ -22,7 +21,6 @@ const StyledPoll = styled.div`
 class NewPoll extends Component {
   componentDidMount() {
     this.props.fetchPollGroups();
-    // this.props.getPollQuestions();
   }
 
   render() {
@@ -58,7 +56,7 @@ class NewPoll extends Component {
           )}
         </div>
       </form>
-      <Chart />
+      {/* <Chart /> */}
     </StyledPoll>;
   }
 }
@@ -76,7 +74,6 @@ const mapDispatchToProps = {
   handleChangePollGroup,
   handleChangePollQuestion,
   handleFormSubmit,
-  // getPollQuestions,
 };
 
 export default connect(
