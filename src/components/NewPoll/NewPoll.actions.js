@@ -51,7 +51,3 @@ export const handleFormSubmit = (pollQuestion, selectedPollGroup) => dispatch =>
     .then(dispatch(resetForm()));
 };
 
-export const getPollQuestions = () => (dispatch) => fetchPollQuestions().then(res => dispatch({
-  type: BRIDGEBOT_ACTIONS.GET_POLL_QUESTIONS,
-  payload: res
-}))

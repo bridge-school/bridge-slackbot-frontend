@@ -66,12 +66,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
         submitFormSuccess: false,
       }
     }
-    case BRIDGEBOT_ACTIONS.GET_POLL_QUESTIONS: {
-      return {
-        ...state,
-        polls: action.payload,
-      }
-    }
     default:
       return state;
   }
