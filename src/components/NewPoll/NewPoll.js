@@ -12,7 +12,7 @@ import {
   handleChangePollGroup,
   handleChangePollQuestion,
   handleFormSubmit,
-  getPollQuestions,
+  // getPollQuestions,
 } from "./NewPoll.actions";
 
 const StyledPoll = styled.div`
@@ -22,7 +22,7 @@ const StyledPoll = styled.div`
 class NewPoll extends Component {
   componentDidMount() {
     this.props.fetchPollGroups();
-    this.props.getPollQuestions();
+    // this.props.getPollQuestions();
   }
 
   render() {
@@ -76,7 +76,7 @@ const mapDispatchToProps = {
   handleChangePollGroup,
   handleChangePollQuestion,
   handleFormSubmit,
-  getPollQuestions,
+  // getPollQuestions,
 };
 
 export default connect(
