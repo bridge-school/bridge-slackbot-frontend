@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import Button from "../Button";
-import Chart from "../Chart";
 import Input from "../Input";
 import Label from "../Label";
 import Select from "../Select";
+import Chart from "../Chart";
 import SuccessMessage from "../SuccessMessage";
 import {
   fetchPollGroups,

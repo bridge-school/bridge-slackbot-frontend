@@ -7,16 +7,16 @@ class Chart extends Component {
       super(props);
       this.state = {
           chartData:{
-            labels: ['Yes (5)', 'No (3)', 'MayBe (2)'],
+            labels: ['Yes (5)', 'No (3)', 'Maybe (2)'],
             datasets:[
               {
-                label:'Legend',
-                data:[
+                label: 'Legend',
+                data: [
                   5,
                   3,
                   2
                 ],
-                backgroundColor:[
+                backgroundColor: [
                   '#08c39d',
                   '#eb2c97',
                   '#2fa1d4'
@@ -28,7 +28,7 @@ class Chart extends Component {
     }
   
     static defaultProps = {
-      displayTitle:true,
+      displayTitle: true,
       displayLegend: true,
       legendPosition:'right',
     }
@@ -40,14 +40,14 @@ class Chart extends Component {
             data={this.state.chartData}
             options={{
               title:{
-                display:this.props.displayTitle,
+                display: this.props.displayTitle,
                 text:'Legend',
                 fontSize: 25,  
                 padding: 10,       
               },
               legend:{
-                display:this.props.displayLegend,
-                position:this.props.legendPosition,
+                display: this.props.displayLegend,
+                position: this.props.legendPosition,
                 boxWidth: 10,
                 fontSize: 18,
                   labels: {

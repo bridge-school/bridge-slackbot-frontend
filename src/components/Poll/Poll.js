@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchSinglePollQuestion } from "../../api/index";
 
+
 class Poll extends Component {
   constructor() {
     super();
@@ -34,6 +35,7 @@ class Poll extends Component {
         <h3>{this.state.pollQuestion}</h3>
         <p>Group asked: @{this.state.pollGroup}</p>
       </div>
+    
     );
   }
 }
