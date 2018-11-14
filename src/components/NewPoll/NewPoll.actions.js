@@ -1,9 +1,7 @@
 import { BRIDGEBOT_ACTIONS } from "../../reducer";
 import {
   getChannelsList,
-  getUsersInChannel,
   submitPollQuestion,
-  fetchPollQuestions
 } from "../../api/index";
 
 const resetForm = () => ({

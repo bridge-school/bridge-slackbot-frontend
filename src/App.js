@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { submitPollQuestion } from "./api";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
 import Header from "./components/Header";
