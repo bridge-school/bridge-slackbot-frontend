@@ -66,7 +66,7 @@ class Poll extends Component {
       // minute: "numeric",
     });
   }
-
+  
   render() {
     return (
       <div className="poll">
