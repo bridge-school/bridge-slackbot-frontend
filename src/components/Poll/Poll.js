@@ -6,6 +6,7 @@ class Poll extends Component {
   constructor() {
     super();
     this.state = {
+      dataLoaded: false,
       pollGroup: "",
       pollId: "",
       pollQuestion: "",
@@ -18,7 +19,7 @@ class Poll extends Component {
   componentDidMount() {
     const {pollId} = this.props.match.params;
     this.getPoll(pollId)
-      .then(res => res.json())      
+      .then(res => res.json())
       .then(res => res.message)
       .then(message =>
         this.setState({
@@ -39,6 +40,7 @@ class Poll extends Component {
     const maybeCount = (responses.filter(response => response.data.answer === "maybe")).length;
 
     this.setState({
+      dataLoaded: true,
       noCount,
       yesCount,
       maybeCount,
@@ -64,7 +66,7 @@ class Poll extends Component {
       // minute: "numeric",
     });
   }
-  
+
   render() {
     return (
       <div className="poll">
@@ -72,7 +74,9 @@ class Poll extends Component {
         <h3>{this.state.pollQuestion}</h3>
         <p className="poll-group">Group asked: @{this.state.pollGroup}</p>
         <p className="date">{this.state.pollId && this.getDate()}</p>
-        <Chart yes={this.state.yesCount} no={this.state.noCount} maybe={this.state.maybeCount} />
+        {this.state.dataLoaded &&
+          <Chart yes={this.state.yesCount} no={this.state.noCount} maybe={this.state.maybeCount} />
+        }
       </div>
     );
   }

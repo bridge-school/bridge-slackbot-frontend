@@ -28,7 +28,7 @@ class Polls extends Component {
       {polls.map(poll => (
       <Poll key={poll.id}>
           <Link to={`/poll/${poll.id}`}>
-            {poll.pollQuestion}
+            {poll.data.pollQuestion}
           </Link>
         </Poll>
       ))}
